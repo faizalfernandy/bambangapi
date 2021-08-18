@@ -65,6 +65,7 @@ class User extends REST_Controller {
         $users['alamat'] = $this->post('alamat');
         $users['alamat_domisili'] = $this->post('alamat_domisili');
         $users['jenis_kelamin'] = $this->post('jenis_kelamin');
+        $users['is_admin'] = $this->post('is_admin');
         $users['password'] = md5('123');
 
         
