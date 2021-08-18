@@ -59,7 +59,7 @@ class Auth extends REST_Controller {
 
         if($user){
             
-            $user['key'] = uniqid();
+            $user['key'] = md5(uniqid());
             $this->session->set_userdata('userdata', $user);
             $this->set_response([
                 'status' => 'success',

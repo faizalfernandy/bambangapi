@@ -600,13 +600,14 @@ abstract class REST_Controller extends \CI_Controller {
 
 
     public function isAuth() {
+        
         if(config_item('access_token')){
             $requestHeaders = apache_request_headers();
             if(!isset($requestHeaders['api-key'])){
                 $this->response([
-                    "status" => false,
-                    "error" => "Invalid token!"
-                ], self::HTTP_FORBIDDEN);
+                    "status" => "fail",
+                    "error" => $this->http_status_codes[self::HTTP_UNAUTHORIZED]
+                ], self::HTTP_UNAUTHORIZED);
             }else{
                 $this->_check_keys($requestHeaders['api-key']);
             }
