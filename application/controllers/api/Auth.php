@@ -71,7 +71,7 @@ class Auth extends REST_Controller {
             // Set the response and exit
             $this->response([
                 'status' => FALSE,
-                'message' => 'No users were found'
+                'message' => 'invalid nomor telepon atau password'
             ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
         }
 
