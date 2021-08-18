@@ -43,12 +43,12 @@ class Auth extends REST_Controller {
 
         if($no_telp == ''){
             $this->response([
-                'status' => FALSE,
+                'status' => "Fail",
                 'message' => 'No Telepon is required!'
             ], REST_Controller::HTTP_BAD_REQUEST);
         }else if($password == ''){
             $this->response([
-                'status' => FALSE,
+                'status' => "Fail",
                 'message' => 'Password required!'
             ], REST_Controller::HTTP_BAD_REQUEST);
         }
@@ -70,7 +70,7 @@ class Auth extends REST_Controller {
         }else{
             // Set the response and exit
             $this->response([
-                'status' => FALSE,
+                'status' => "Fail",
                 'message' => 'invalid nomor telepon atau password'
             ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
         }
